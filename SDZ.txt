@@ -1,0 +1,22 @@
+var mas,ind : array [1..100] of integer; 
+    i,n,m,j,s,f,max:integer;
+begin
+s:=0;
+max:=0;
+m:=0;
+readln (n);
+for i:=1 to n do begin 
+                 readln (mas[i]);
+                 if mas[i]>max then max:=mas[i];    
+                 end;
+for i:=max downto 1 do begin                        
+                              for j:=n downto 1 do begin     
+                                               if mas [j]>=i then begin m:=m+1; ind[m]:=j;end;
+                                               end;
+                                               if m>1 then begin for f:=1 to m-1 do s:=s+ind[f]-ind[f+1]-1; end;
+                                              m:=0;
+                                               end;
+writeln (s);
+end.
+                          
+                 
